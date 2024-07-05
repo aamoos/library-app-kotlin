@@ -5,6 +5,8 @@ import com.group.libraryapp.calculator.Calculator
 fun main(){
     val calculatorTest = CalculatorTest()
     calculatorTest.addTest()
+    calculatorTest.minusTest()
+    calculatorTest.multiplyTest()
 }
 
 class CalculatorTest {
@@ -18,6 +20,32 @@ class CalculatorTest {
 
         //then
         if(calculator.number != 8){
+            throw IllegalStateException()
+        }
+    }
+
+    fun minusTest(){
+        //given
+        val calculator = Calculator(5)
+
+        // when
+        calculator.minus(3)
+
+        //then
+        if(calculator.number != 2){
+            throw IllegalStateException()
+        }
+    }
+
+    fun multiplyTest(){
+        //given
+        val calculator = Calculator(5)
+
+        // when
+        calculator.multiply(3)
+
+        //then
+        if(calculator.number != 15){
             throw IllegalStateException()
         }
     }
