@@ -2,10 +2,13 @@ package com.group.libraryapp.domain.user;
 
 import com.group.libraryapp.domain.book.Book;
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -29,7 +32,7 @@ public class User {
   }
 
   public User(String name, Integer age) {
-    if (name.isBlank()) {
+    if (name.isEmpty()) {
       throw new IllegalArgumentException("이름은 비어 있을 수 없습니다");
     }
     this.name = name;
@@ -48,14 +51,16 @@ public class User {
     UserLoanHistory targetHistory = this.userLoanHistories.stream()
         .filter(history -> history.getBookName().equals(bookName))
         .findFirst()
-        .orElseThrow();
+            .orElseThrow(() -> new NoSuchElementException("No loan history found for book: " + bookName));
     targetHistory.doReturn();
   }
 
+  @NotNull
   public String getName() {
     return name;
   }
 
+  @Nullable
   public Integer getAge() {
     return age;
   }
