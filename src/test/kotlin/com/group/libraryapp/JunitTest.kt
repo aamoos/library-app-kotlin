@@ -1,4 +1,4 @@
-package com.group.libaryapp
+package com.group.libraryapp
 
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach

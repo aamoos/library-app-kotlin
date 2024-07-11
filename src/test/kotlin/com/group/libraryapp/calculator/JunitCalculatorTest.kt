@@ -1,6 +1,5 @@
-package com.group.libaryapp.calculator
+package com.group.libraryapp.calculator
 
-import com.group.libraryapp.calculator.Calculator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
