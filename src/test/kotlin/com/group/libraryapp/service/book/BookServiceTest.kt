@@ -2,6 +2,7 @@ package com.group.libraryapp.service.book
 
 import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
+import com.group.libraryapp.domain.book.BookType
 import com.group.libraryapp.domain.book.request.BookLoanRequest
 import com.group.libraryapp.domain.book.request.BookRequest
 import com.group.libraryapp.domain.book.request.BookReturnRequest
@@ -35,7 +36,7 @@ class BookServiceTest @Autowired constructor(
     @DisplayName("책 등록이 정상 동작한다")
     fun saveBookTest(){
         //given
-        val request = BookRequest("이상한 나라의 엘리스", "COMPUTER")
+        val request = BookRequest("이상한 나라의 엘리스", BookType.COMPUTER)
 
         //when
         bookService.saveBook(request)
@@ -51,7 +52,7 @@ class BookServiceTest @Autowired constructor(
     @DisplayName("책 대출이 정상 동작한다")
     fun loanBookTest(){
         //given
-        bookRepository.save(Book("이상한 나라의 엘리스", "COMPUTER"))
+        bookRepository.save(Book("이상한 나라의 엘리스", BookType.COMPUTER))
         val savedUser = userRepository.save(User("최태현", null))
         val request = BookLoanRequest("최태현", "이상한 나라의 엘리스")
 
