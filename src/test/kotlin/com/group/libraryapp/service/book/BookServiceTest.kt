@@ -3,9 +3,9 @@ package com.group.libraryapp.service.book
 import com.group.libraryapp.domain.book.Book
 import com.group.libraryapp.domain.book.BookRepository
 import com.group.libraryapp.domain.book.BookType
-import com.group.libraryapp.domain.book.request.BookLoanRequest
-import com.group.libraryapp.domain.book.request.BookRequest
-import com.group.libraryapp.domain.book.request.BookReturnRequest
+import com.group.libraryapp.dto.book.request.BookLoanRequest
+import com.group.libraryapp.dto.book.request.BookRequest
+import com.group.libraryapp.dto.book.request.BookReturnRequest
 import com.group.libraryapp.domain.user.User
 import com.group.libraryapp.domain.user.UserRepository
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory

@@ -1,4 +1,4 @@
-package com.group.libraryapp.domain.book.request
+package com.group.libraryapp.dto.book.request
 
 import com.group.libraryapp.domain.book.BookType
 

@@ -1,4 +1,4 @@
-package com.group.libraryapp.domain.book.request
+package com.group.libraryapp.dto.book.request
 
 class BookReturnRequest (
     val bookName: String,
